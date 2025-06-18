@@ -1,0 +1,167 @@
+body {
+  margin: 0;
+  font-family: cursive;
+  color: white;
+background-color: #d8ccc1;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background-color: #4b2905;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.logo img{
+  height: 30px;
+  width: auto;
+  position: relative;
+
+  align-items: center;
+}
+
+.logo {
+  font-size: 16px;
+  font-weight: bold;
+  color: aliceblue;
+  font-family: cursive;
+  align-items: start;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  top: 40px;
+  justify-content: center;
+}
+
+nav a:hover {
+  color: aqua;
+}
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-icon span {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(124, 49, 49);
+}
+
+#menu-toggle {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: brown;
+    flex-direction: column;
+    width: 150px;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 10;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+
+  #menu-toggle:checked + label + nav {
+    display: flex;
+  }
+}
+
+.hero {
+  background-image: url('./2x/KUGEMAAsset\ 7@2x.png');
+  background-size: cover;
+  background-position:center;
+  text-align: start;
+
+  padding: 200px 30px;
+
+}
+
+.hero h1 {
+  font-size: 36px;
+  padding:20px ;
+  top: 10px;
+}
+.hero p{
+    padding: 30px;
+}
+.hero .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 15px;
+  background: #4b2905;
+  color: #fffefe;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.hero .btn:hover{
+  color: aqua;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+.skills div {
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+
+.skills img {
+  width: 40px;
+  height: 40px;
+}
+
+.project-boxes {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.project-boxes .box {
+  width: 30%;
+  text-align: center;
+}
+section {
+  padding: 40px 20px;
+}
+
+.skills div {
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+
+.skills img {
+  width: 40px;
+  height: 40px;
+}
+
+.project-boxes {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.project-boxes .box {
+  width: 30%;
+  text-align: center;
+}
+.contact a{
+  text-decoration: none;
+}
