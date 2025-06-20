@@ -379,6 +379,7 @@ section {
 .card-content p {
   font-size: 0.95em;
   color: #333;
+  te
 }
 
 /* TESTIMONIALS */
@@ -401,6 +402,9 @@ section {
 }
 
 /* CONTACT */
+.contact{
+  background-color: #a0672b;
+}
 #contact a {
   text-decoration: none;
   color: #107eb1;
