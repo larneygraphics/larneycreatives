@@ -27,6 +27,329 @@ header {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: aliceblue;
+}
+
+.logo img {
+  height: 30px;
+  width: auto;
+}
+
+/* NAVIGATION */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: aqua;
+}
+
+/* MENU ICON */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-icon span {
+  width: 25px;
+  height: 3px;
+  background-color: #e2dada;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  background-image: url('./2x/KUGEMAAsset 7@2x.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding: 50px 30px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 36px;
+  padding: 20px 0;
+}
+
+.hero p {
+  font-size: 18px;
+  padding: 10px 0 30px 0;
+}
+
+.hero .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #a0672b;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: 0.3s ease;
+}
+
+.hero .btn:hover {
+  color: aqua;
+}
+
+/* SKILLS */
+.skills {
+  text-align: center;
+}
+
+.skills div {
+  display: inline-block;
+  margin: 10px;
+}
+
+.skills img {
+  width: 40px;
+  height: 40px;
+}
+
+/* PROJECTS */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 40px;
+  background: silver;
+}
+
+.card {
+  background: #e9e5e5;
+  border: 1px solid brown;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  padding: 17px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.card-content h3 {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+.card-content p {
+  font-size: 0.95em;
+  color: #333;
+}
+
+/* TESTIMONIALS */
+.project-boxes {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project-boxes .box {
+  width: 30%;
+  text-align: center;
+}
+
+.project-boxes img {
+  max-width: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* CONTACT */
+#contact a {
+  text-decoration: none;
+  color: #107eb1;
+}
+
+#contact a:hover {
+  color: rgb(14, 28, 212);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 5px;
+  background-color: #4b2905;
+  color: rgb(224, 210, 210);
+  font-size: 18px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #4b2905;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    z-index: 9;
+  }
+
+  #menu-toggle:checked + .menu-icon + nav {
+    display: flex;
+  }
+
+  nav a {
+    margin: 10px 20px;
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
+  .card {
+    width: 90%;
+    margin: auto;
+  }
+
+  .project-boxes .box {
+    width: 100%;
+  }
+
+  footer {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero {
+    background-position: center top;
+    min-height: 80vh;
+    padding: 30px 20px;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .skills div {
+    display: block;
+    margin: 15px auto;
+  }
+
+  .project-boxes img {
+    width: 60px;
+  }
+
+  .card-content h3 {
+    font-size: 1em;
+  }
+
+  .card-content p {
+    font-size: 0.9em;
+  }
+
+  footer {
+    font-size: 13px;
+  }
+}
+/* GLOBAL STYLES */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #333;
+  background-color: #d8ccc1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #4b2905;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
   font-size: 16px;
   font-weight: bold;
   color: aliceblue;
@@ -40,7 +363,6 @@ header {
   width: auto;
 }
 
-/* NAVIGATION */
 nav {
   display: flex;
   align-items: center;
@@ -62,6 +384,8 @@ nav a:hover {
   cursor: pointer;
   flex-direction: column;
   gap: 5px;
+  position: absolute;
+  right: 30px;
 }
 
 .menu-icon span {
@@ -79,9 +403,8 @@ nav a:hover {
   position: relative;
   background-image: url('./2x/KUGEMAAsset 7@2x.png');
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
-  background-attachment: scroll;
   color: white;
   min-height: 100vh;
   display: flex;
@@ -230,18 +553,9 @@ footer {
 }
 
 /* RESPONSIVE DESIGN */
-
 @media (max-width: 768px) {
-  header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-  }
-
   .menu-icon {
     display: flex;
-    margin-left: auto;
   }
 
   nav {
@@ -251,7 +565,6 @@ footer {
     background-color: #4b2905;
     width: 100%;
     padding: 10px 0;
-    border-radius: 0 0 10px 10px;
     position: absolute;
     top: 60px;
     right: 0;
@@ -265,7 +578,6 @@ footer {
     margin: 10px 20px;
     width: 100%;
   }
-}
 
   .hero h1 {
     font-size: 28px;
@@ -295,7 +607,6 @@ footer {
   }
 }
 
-/* Phones */
 @media (max-width: 500px) {
   .hero {
     background-position: center top;
