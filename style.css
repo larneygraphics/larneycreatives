@@ -20,7 +20,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background-color: #8b663e;
+  background-color: #2a5b94;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -38,6 +38,9 @@ header {
 .logo img {
   height: 30px;
   width: auto;
+  background-color: #e0d2d2;
+  padding: 10px;
+  border-radius: 9px;
 }
 
 nav {
@@ -84,7 +87,7 @@ nav a:hover {
   background-position: center;
   background-repeat: no-repeat;
   color: white;
-  min-height: 130vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -174,7 +177,7 @@ nav a:hover {
 }
 
 .card:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 
 .card img {
@@ -190,7 +193,10 @@ nav a:hover {
 .card-content p {
   font-size: 0.95em;
   color: #333;
+
 }
+
+
 
 /* TESTIMONIAL SECTION */
 .project-boxes {
@@ -202,17 +208,25 @@ nav a:hover {
 }
 
 .project-boxes .box {
-  width: 280px;
+  justify-content: space-between;
+  width: 390px;
   text-align: center;
+  transition: transform 0.3s ease;
+
 }
 
 .project-boxes img {
   max-width: 100px;
-  border-radius: 50%;
+  height: 90px;
+  border-radius: 20px;
   margin-bottom: 10px;
 }
+.project-boxes img:hover{
+   transform: scale(1.74667)
 
+}
 /* CONTACT SECTION */
+
 #contact a {
   text-decoration: none;
   color: #107eb1;
@@ -226,7 +240,7 @@ nav a:hover {
 footer {
   text-align: center;
   padding: 10px;
-  background-color: #4b2905;
+  background-color: #2a5b94;
   color: #e0d2d2;
   font-size: 16px;
 }
@@ -278,61 +292,7 @@ footer {
   .project-boxes .box {
     width: 80%;
   }
-  #projects {
-  padding: 60px 20px;
-  background: #fffaf5;
-  text-align: center;
-}
-
-#projects h2 {
-  font-size: 2.5rem;
-  color: #f06d25;
-  margin-bottom: 40px;
-}
-
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.portfolio-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.portfolio-item img {
-  width: 100%;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.portfolio-item:hover img {
-  transform: scale(1.05);
-}
-
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(240, 109, 37, 0.85);
-  color: #fff;
-  padding: 20px;
-  transform: translateY(100%);
-  transition: transform 0.4s ease;
-  text-align: left;
-}
-
-.portfolio-item:hover .overlay {
-  transform: translateY(0);
-}
-
+  
 
   footer {
     font-size: 14px;
