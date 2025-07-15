@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Poster Gallery | Larney Graphics</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="content.css" />
 </head>
 <body>
 
@@ -34,57 +34,56 @@
     </p>
 
     <div class="container">
-      <div class="card">
-        <img src="./lance.png" alt="Lance Foundation Poster" />
+      <div class="card" onclick="openFullscreen(this)">
+        <img src="./lance.png" alt="Lance Foundation Poster" data-full="./lance.png" />
         <div class="card-content">
           <h3>Mobilisation Poster</h3>
           <p>Charity event poster for The Lance Foundation’s Touch A Heart Initiative.</p>
         </div>
       </div>
 
-      <div class="card">
-        <img src="./mt kipipiri poster.png" alt="Mt. Kipipiri Poster" />
+      <div class="card" onclick="openFullscreen(this)">
+        <img src="./mt kipipiri poster.png" alt="Mt. Kipipiri Poster" data-full="./mt kipipiri poster.png" />
         <div class="card-content">
           <h3>Promotion Poster</h3>
           <p>Promotional poster for a hiking event — Kipipiri Transverse.</p>
         </div>
       </div>
 
-      <div class="card">
-        <img src="./kip poster final.png" alt="Sports Day Poster" />
+      <div class="card" onclick="openFullscreen(this)">
+        <img src="./kip poster final.png" alt="Sports Day Poster" data-full="./kip poster final.png" />
         <div class="card-content">
           <h3>Event Poster</h3>
           <p>Poster for the Annual KIP South Rift Region Sports Day – 2025.</p>
         </div>
       </div>
 
-      <div class="card">
-        <img src="./top cow sold here.png" alt="TopCow Ad Poster" />
+      <div class="card" onclick="openFullscreen(this)">
+        <img src="./top cow sold here.png" alt="TopCow Ad Poster" data-full="./top cow sold here.png" />
         <div class="card-content">
           <h3>Advertisement Poster</h3>
           <p>Product ad poster for TopCow Probiotic Yoghurt.</p>
         </div>
       </div>
 
-      
-      <div class="card">
-        <img src="./strawberry (2).png" alt="TopCow Ad Poster" />
+      <div class="card" onclick="openFullscreen(this)">
+        <img src="./strawberry (2).png" alt="Strawberry Poster" data-full="./strawberry (2).png" />
         <div class="card-content">
           <h3>Advertisement Poster</h3>
           <p>Product ad poster for TopCow Probiotic Yoghurt.</p>
         </div>
       </div>
 
-      <div class="card">
-        <img src="./kip-Recovered.png" alt="KIP Sports Poster" />
+      <div class="card" onclick="openFullscreen(this)">
+        <img src="./kip-Recovered.png" alt="KIP Sports Poster" data-full="./kip-Recovered.png" />
         <div class="card-content">
           <h3>Event Poster</h3>
           <p>Alternate version for KIP South Rift Region Sports Day – 2025.</p>
         </div>
       </div>
 
-      <div class="card">
-        <img src="./20240907_120515.jpg" alt="Student Campaign Poster" />
+      <div class="card" onclick="openFullscreen(this)">
+        <img src="./20240907_120515.jpg" alt="Student Campaign Poster" data-full="./20240907_120515.jpg" />
         <div class="card-content">
           <h3>Campaign Poster</h3>
           <p>Student leadership campaign poster.</p>
@@ -93,9 +92,27 @@
     </div>
   </section>
 
+  <!-- Fullscreen viewer -->
+  <div id="fullscreenViewer" class="fullscreen-viewer" onclick="closeFullscreen()">
+    <img id="fullscreenImage" src="" alt="Full Poster" />
+  </div>
+
   <footer>
     <p>&copy; 2025 Larney Graphics. All rights reserved.</p>
   </footer>
 
+  <script>
+    function openFullscreen(card) {
+      const img = card.querySelector('img');
+      const fullSrc = img.getAttribute('data-full');
+      document.getElementById('fullscreenImage').src = fullSrc;
+      document.getElementById('fullscreenViewer').style.display = 'flex';
+    }
+
+    function closeFullscreen() {
+      document.getElementById('fullscreenViewer').style.display = 'none';
+      document.getElementById('fullscreenImage').src = '';
+    }
+  </script>
 </body>
 </html>

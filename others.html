@@ -4,7 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Creative Concepts | Larney Graphics</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="content.css" />
+  <style>
+    /* Fullscreen viewer */
+    .fullscreen-viewer {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .fullscreen-viewer img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      border: 5px solid white;
+      border-radius: 10px;
+    }
+
+    .fullscreen-viewer:after {
+      content: '✕';
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
@@ -35,7 +68,7 @@
 
     <div class="container">
       <div class="card">
-        <img src="./Frank.jpg" alt="Product Mockup" />
+        <img src="./Frank.jpg" alt="Product Mockup" onclick="openFullscreen(this.src)" />
         <div class="card-content">
           <h3>Product Mockup</h3>
           <p>Mock packaging design for a skincare brand.</p>
@@ -43,7 +76,7 @@
       </div>
 
       <div class="card">
-        <img src="./yellow york sticker.png" alt="Quote Design" />
+        <img src="./yellow york sticker.png" alt="Quote Design" onclick="openFullscreen(this.src)" />
         <div class="card-content">
           <h3>Packaging sticker</h3>
           <p>Motivational design for social media sharing.</p>
@@ -51,7 +84,7 @@
       </div>
 
       <div class="card">
-        <img src="./others/ad-banner.png" alt="Ad Banner" />
+        <img src="./others/ad-banner.png" alt="Ad Banner" onclick="openFullscreen(this.src)" />
         <div class="card-content">
           <h3>Ad Banner</h3>
           <p>Clean and scroll-stopping banner for digital ad campaigns.</p>
@@ -59,7 +92,7 @@
       </div>
 
       <div class="card">
-        <img src="./2x/cannopyAsset 1@2x.png" alt="Company Profile Design" />
+        <img src="./2x/cannopyAsset 1@2x.png" alt="Company Profile Design" onclick="openFullscreen(this.src)" />
         <div class="card-content">
           <h3>Company Profile</h3>
           <p>A layout design concept for company profile presentations.</p>
@@ -68,9 +101,28 @@
     </div>
   </section>
 
+  <!-- Fullscreen Image Viewer -->
+  <div class="fullscreen-viewer" id="fullscreenViewer" onclick="closeFullscreen()">
+    <img id="fullscreenImage" src="" alt="Full Image View" />
+  </div>
+
   <footer>
     <p>&copy; 2025 Larney Graphics. All rights reserved.</p>
   </footer>
 
+  <script>
+    function openFullscreen(src) {
+      const viewer = document.getElementById('fullscreenViewer');
+      const image = document.getElementById('fullscreenImage');
+      image.src = src;
+      viewer.style.display = 'flex';
+    }
+
+    function closeFullscreen() {
+      const viewer = document.getElementById('fullscreenViewer');
+      viewer.style.display = 'none';
+      document.getElementById('fullscreenImage').src = '';
+    }
+  </script>
 </body>
 </html>

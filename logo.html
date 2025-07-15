@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Logo Gallery | Larney Graphics</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="content.css" />
 </head>
 <body>
 
@@ -35,7 +35,7 @@
 
     <div class="container">
       <div class="card">
-        <img src="./2x/KUGEMAAsset 2@2x.png" alt="Larney Logo" />
+        <img src="./2x/KUGEMAAsset 2@2x.png" alt="Larney Logo" class="clickable-img" />
         <div class="card-content">
           <h3>Larney Logo</h3>
           <p>Minimalist and bold brand identity for Larney Graphics.</p>
@@ -43,7 +43,7 @@
       </div>
 
       <div class="card">
-        <img src="./1x/bekeAsset 1KIP .png" alt="Beke Logo" />
+        <img src="./1x/bekeAsset 1KIP .png" alt="Beke Logo" class="clickable-img" />
         <div class="card-content">
           <h3>Beke</h3>
           <p>Energetic and modern branding for a dynamic creative company.</p>
@@ -51,7 +51,7 @@
       </div>
 
       <div class="card">
-        <img src="./Asset 5martik.png" alt="Matik Paws Logo" />
+        <img src="./Asset 5martik.png" alt="Matik Paws Logo" class="clickable-img" />
         <div class="card-content">
           <h3>Matik Paws</h3>
           <p>Matik Paws is a vibrant, pet-loving brand dedicated to the health, happiness, and style of your furry companions.</p>
@@ -59,7 +59,7 @@
       </div>
 
       <div class="card">
-        <img src="./1x/cookieAsset 2KIP .png" alt="Cookie Edies Logo" />
+        <img src="./1x/cookieAsset 2KIP .png" alt="Cookie Edies Logo" class="clickable-img" />
         <div class="card-content">
           <h3>Cookie Edies</h3>
           <p>“Crunch at Every Bite” — a fun, delicious brand identity with packaging visuals.</p>
@@ -67,7 +67,7 @@
       </div>
 
       <div class="card">
-        <img src="./1x/Asset 2martik.png" alt="Canopy Wear Logo" />
+        <img src="./1x/Asset 2martik.png" alt="Canopy Wear Logo" class="clickable-img" />
         <div class="card-content">
           <h3>Canopy Wear</h3>
           <p>Canopy Wears is all about the shoe game — bold, iconic, and unapologetically fresh..</p>
@@ -75,7 +75,7 @@
       </div>
 
       <div class="card">
-        <img src="./2x/cannopyAsset 6@2x.png" alt="Niko Photography Logo" />
+        <img src="./2x/cannopyAsset 6@2x.png" alt="Niko Photography Logo" class="clickable-img" />
         <div class="card-content">
           <h3>Niko Photography</h3>
           <p>Creative identity combining geometric strength and vibrant motion.</p>
@@ -84,9 +84,31 @@
     </div>
   </section>
 
+  <div class="fullscreen-viewer" id="fullscreenViewer">
+    <img id="fullscreenImage" src="" alt="Full View" />
+  </div>
+
   <footer>
     <p>&copy; 2025 Larney Graphics. All rights reserved.</p>
   </footer>
+
+  <script>
+    const viewer = document.getElementById('fullscreenViewer');
+    const fullImg = document.getElementById('fullscreenImage');
+    const clickableImages = document.querySelectorAll('.clickable-img');
+
+    clickableImages.forEach(img => {
+      img.addEventListener('click', () => {
+        fullImg.src = img.src;
+        viewer.style.display = 'flex';
+      });
+    });
+
+    viewer.addEventListener('click', () => {
+      viewer.style.display = 'none';
+      fullImg.src = '';
+    });
+  </script>
 
 </body>
 </html>

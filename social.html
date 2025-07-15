@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Creative Concepts | Larney Graphics</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="content.css" />
 </head>
 <body>
 
@@ -35,48 +35,68 @@
 
     <div class="container">
       <div class="card">
-        <img src="./lance labour day poster.png" alt="Product Mockup" />
+        <img src="./lance labour day poster.png" alt="Labour Day Poster" class="clickable-img" />
         <div class="card-content">
-          <h3>labour day poster</h3>
-        
+          <h3>Labour Day Poster</h3>
         </div>
       </div>
 
       <div class="card">
-        <img src="./bim1.png" alt="Quote Design" />
+        <img src="./bim1.png" alt="Training Advert" class="clickable-img" />
         <div class="card-content">
-          <h3>Training advert</h3>
+          <h3>Training Advert</h3>
         </div>
       </div>
 
       <div class="card">
-        <img src="./Untitled-1.png" alt="Ad Banner" />
+        <img src="./Untitled-1.png" alt="Mothers Day Poster" class="clickable-img" />
         <div class="card-content">
-          <h3>mothers day poster</h3>
-          
+          <h3>Mothers Day Poster</h3>
         </div>
       </div>
 
       <div class="card">
-        <img src="./Mentorship_x_Pads_Drive_x_Boychild_Empowerment[2].png" alt="Ad Banner" />
+        <img src="./Mentorship_x_Pads_Drive_x_Boychild_Empowerment[2].png" alt="Empowerment Poster" class="clickable-img" />
         <div class="card-content">
-          <h3>mothers day poster</h3>
+          <h3>Boychild Empowerment Poster</h3>
         </div>
       </div>
 
       <div class="card">
-        <img src="./PSD Happy Eid Al Adha Flyer Editable Template _ PSD Free Download - Pikbest.png" alt="Company Profile Design" />
+        <img src="./PSD Happy Eid Al Adha Flyer Editable Template _ PSD Free Download - Pikbest.png" alt="Eid Poster" class="clickable-img" />
         <div class="card-content">
-          <h3>Eid al Adha poster</h3>
-      
+          <h3>Eid al Adha Poster</h3>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Fullscreen Image Viewer -->
+  <div class="fullscreen-viewer" id="fullscreenViewer">
+    <img id="fullscreenImage" src="" alt="Full View" />
+  </div>
+
   <footer>
     <p>&copy; 2025 Larney Graphics. All rights reserved.</p>
   </footer>
+
+  <script>
+    const viewer = document.getElementById('fullscreenViewer');
+    const fullImg = document.getElementById('fullscreenImage');
+    const clickableImages = document.querySelectorAll('.clickable-img');
+
+    clickableImages.forEach(img => {
+      img.addEventListener('click', () => {
+        fullImg.src = img.src;
+        viewer.style.display = 'flex';
+      });
+    });
+
+    viewer.addEventListener('click', () => {
+      viewer.style.display = 'none';
+      fullImg.src = '';
+    });
+  </script>
 
 </body>
 </html>
